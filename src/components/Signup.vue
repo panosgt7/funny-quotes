@@ -26,4 +26,25 @@
   </template>
 
   <script>
+  import auth from '../auth'
+  export default {
+    data() {
+      return {
+        credentials: {
+          username: '',
+          password: ''
+        },
+        error: ''
+      }
+    },
+    methods: {
+      submit() {
+        var credentials = {
+          username: this.credentials.username,
+          password: this.credentials.password
+        }
+        auth.signup(this, credentials, 'secretquote')
+      }
+    }
+  }
   </script>
