@@ -48,6 +48,19 @@
 <script>
   import('./assets/js/bootstrap.min.js')
   import('./assets/js/jquery.min.js')
+  import auth from './auth'
+  export default {
+    data() {
+      return {
+        user: auth.user
+      }
+    },
+    methods: {
+      logout() {
+        auth.logout()
+      }
+    }
+  }
 </script>
 
 <style>
@@ -56,5 +69,4 @@
   @import "./assets/css/font-awesome.min.css";
   @import "https://fonts.googleapis.com/css?family=Montserrat:400,700";
   @import "https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic";
-
 </style>
