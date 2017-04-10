@@ -10,6 +10,7 @@
  </template>
 
  <script>
+ import auth from '../auth'
  export default {
    data() {
      return {
@@ -20,6 +21,7 @@
      getQuote() {
        this.$http.get('').then(response => {
            this.quote = response.data;
+           headers: auth.getAuthHeader()
        }, response => {
         console.log(err)
       });
