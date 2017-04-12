@@ -26,7 +26,7 @@ var router = new VueRouter({
     { path: '/home', component: Home },
     { path: '/login', component: Login },
     { path: '/signup', component: Signup },
-    { path: '/secretquote', component: SecretQuote }\
+    { path: '/secretquote', component: SecretQuote }
   ]
 })
 
