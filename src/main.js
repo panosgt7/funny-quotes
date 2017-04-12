@@ -24,9 +24,21 @@ var router = new VueRouter({
   routes: [
     { path: '/', component: Home },
     { path: '/home', component: Home },
-    { path: '/login', component: Login },
-    { path: '/signup', component: Signup },
-    { path: '/secretquote', component: SecretQuote }
+    { path: '/login', component: Login,
+        beforeEnter: (to, from, next) => {
+          auth.user.authenticated ? next('/home') : next()
+        }
+    },
+    { path: '/signup', component: Signup,
+        beforeEnter: (to, from, next) => {
+          auth.user.authenticated ? next('/home') : next()
+        }
+    },
+    { path: '/secretquote', component: SecretQuote,
+        beforeEnter: (to, from, next) => {
+          auth.user.authenticated ? next() : next('/login')
+        }
+    }
   ]
 })
 
