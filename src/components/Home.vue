@@ -18,7 +18,7 @@
     },
     methods: {
       getQuote() {
-        this.$http.get('').then(response => {
+        this.$http.get('http://localhost:3001/api/random-quote').then(response => {
           this.quote = response.data;
         }, response => {
           console.log(err)
