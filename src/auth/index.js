@@ -21,6 +21,11 @@ export default {
       this.user.authenticated = true
       Vue.http.headers.common['Authorization'] = this.getAuthHeader()
 
+      // Redirect to a specified route
+      if(redirect) {
+        router.push('/home')
+      }
+
     }, response => {
       context.error = response.data
     });
@@ -31,6 +36,10 @@ export default {
       window.localStorage.setItem('id_token', response.data.id_token)
 
       this.user.authenticated = true
+
+      if(redirect) {
+        router.push('/home')
+      }
 
     }, response => {
       context.error = response.data
@@ -43,6 +52,7 @@ export default {
     window.localStorage.removeItem('id_token')
     this.user.authenticated = false
     delete Vue.http.headers.common['Authorization']
+    router.push('/home')
   },
 
   checkAuth() {
