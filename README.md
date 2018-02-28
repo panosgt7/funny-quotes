@@ -1,6 +1,6 @@
 # funny-quotes
 
-> A Single-page Application that presents funny quotes, using Vue.js for the front-ent, Node.js for the back-end and Auth0 for authentication
+> A Single-page Application that presents funny quotes, using Vue.js for the front-end, Node.js for the back-end and Auth0 for authentication
 
 ## Build Setup
 
